@@ -1,16 +1,19 @@
+// seleziono gli elementi nella DOM
+const gioca_btn = document.getElementById('gioca');
+const resetta_btn = document.getElementById('resetta');
+const level_select = document.getElementById('level');
+const contain = document.querySelector(".contain");
 
 
-const containe = document.querySelector(".containe");
+// creo una variabile per il max numero di celle
 
-// creo un max numero di celle
+let nMax;
 
-let nMax = 100;
-
-// creo un ciclo n volte per le celle (dove n in questo caso sta per 64)
+// creo un ciclo n volte per le celle
 
 for (let i = 0; i < nMax; i++) {
   const cell = `<div class="cell"></div>`;
-  containe.innerHTML += cell;
+  contain.innerHTML += cell;
 }
 
 // seleziono una cella che ha classe cell e active
@@ -21,14 +24,12 @@ const cellEl = document.querySelectorAll(".cell")
 
 
 for (let i = 0; i < cellEl.length; i++) {
-    const thisCell = cellEl[i];
-    console.log(thisCell)
-    thisCell.addEventListener("click", function() {
-        thisCell.classList.toggle("bg_green")
-        // this.classList.add("active")
-        console.log("Changed the color")
-    })
-
-
-    
+  const thisCell = cellEl[i];
+  console.log(thisCell)
+  thisCell.addEventListener("click", function () {
+    thisCell.classList.toggle("bg_green")
+    // this.classList.add("active")
+    console.log("Changed the color")
+  })
 }
+
